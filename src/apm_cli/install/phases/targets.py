@@ -151,6 +151,7 @@ def run(ctx: InstallContext) -> None:
         resolve_targets as _resolve_targets_v2,
     )
     from apm_cli.integration import AgentIntegrator, PromptIntegrator
+    from apm_cli.integration.canvas_integrator import CanvasIntegrator
     from apm_cli.integration.command_integrator import CommandIntegrator
     from apm_cli.integration.copilot_cowork_paths import CoworkResolutionError
     from apm_cli.integration.hook_integrator import HookIntegrator
@@ -506,6 +507,7 @@ def run(ctx: InstallContext) -> None:
         "command": CommandIntegrator(),
         "hook": HookIntegrator(),
         "instruction": InstructionIntegrator(),
+        "canvas": CanvasIntegrator(),
     }
 
 
