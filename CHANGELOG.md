@@ -15,6 +15,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   available in the session. Gated by the `canvas` experimental flag (enable with
   `apm experimental enable canvas`); a dependency-provided canvas is executable
   code and stays blocked until you pass `--trust-canvas-extensions`. (#1689)
+- Experimental canvas: `apm install --global --trust-canvas-extensions` now
+  deploys a dependency-provided canvas to `~/.copilot/extensions/<name>/` so it
+  is available in every Copilot session, and `apm uninstall --global` prunes it.
+  Global canvas install always requires the trust flag (full-account blast
+  radius), supports only the default `~/.copilot` location (a non-default
+  `$COPILOT_HOME` is refused), and does not deploy first-party root canvases
+  (package them as a dependency instead). (#1691)
 
 ### Fixed
 
