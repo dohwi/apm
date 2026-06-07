@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Experimental, Copilot-only `canvas` primitive: a package can declare a Copilot
+  CLI extension under `.apm/extensions/<name>/` (entry `extension.mjs`) and
+  `apm install` / `apm pack` deploy it to `.github/extensions/<name>/` so it is
+  available in the session. Gated by the `canvas` experimental flag (enable with
+  `apm experimental enable canvas`); a dependency-provided canvas is executable
+  code and stays blocked until you pass `--trust-canvas-extensions`. (#1689)
+
 ### Fixed
 
 - `apm install` now keeps format-transformed rule files (`.claude/rules`,
